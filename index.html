@@ -50,7 +50,7 @@
             left: 10%;
             width: 40%;
             padding: 25px;
-            background-color: rgba(24, 24, 26, 0.75);
+            background-color: rgb(24, 24, 26);
             color: white;
             font-size: 20px;
             text-align: center;
@@ -77,6 +77,8 @@
             border-radius: 5px;
             display: inline-block;
             transition: background-color 0.3s;
+            font-weight: bolder;
+
         }
 
         .Middle_textbox1 a:hover {
@@ -89,7 +91,7 @@
             right: 10%;
             width: 40%;
             padding: 25px;
-            background-color: rgba(255, 255, 255, 0.75); /* White background for the mirrored box */
+            background-color: rgb(255, 255, 255); /* White background for the mirrored box */
             color: black;
             font-size: 20px;
             text-align: center;
@@ -99,42 +101,58 @@
         .Middle_textbox2 h2 {
             font-size: 32px;
             margin-bottom: 15px;
+            text-align: left;
         }
 
         .Middle_textbox2 p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.5;
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .Middle_textbox2 a {
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 5px 24px;
             background-color: #633e3e00;
             color: black;
-            font-size: 16px;
+            font-size: 20px;
             border-radius: 5px;
             display: inline-block;
             transition: background-color 0.3s;
+            font-weight: bolder;
         }
 
         .Middle_textbox2 a:hover {
             background-color: #000000;
         }
 
-        /* New Textbox Below */
-        .Middle_textbox3 {
-            width: 70%;
-            padding: 30px;
-            background-color: rgba(24, 24, 26, 0.75);
-            color: rgb(255, 255, 255);
-            font-size: 18px;
-            text-align: center;
-            border-radius: 10px;
+.Middle_textbox3 {
+    position: absolute;
+    right: 0%;
+    width: 90%;
+    padding: 25px;
+    top: calc(30% + 10px); /* Adjusting position with a calculated offset from the middle */
+    background-color: rgba(0, 0, 0, 0); /* White background for the mirrored box */
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+        .Middle_textbox3 h2 {
+            font-size: 51px;
+            margin-bottom: 15px;
+            text-align: left;
         }
 
         .Middle_textbox3 p {
-            line-height: 1.6;
+            font-size: 28px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-right: 30%;
         }
 
         .Lower_Part {
@@ -225,13 +243,16 @@
 
         <!-- Mirrored Textbox -->
         <div class="Middle_textbox2">
-            <h2>Explore New Features</h2>
-            <p>Discover the latest updates and features introduced in Blender 4.3, empowering creators worldwide.</p>
-            <a href="#">Explore More</a>
+            <h2>The Future of Overrides</h2>
+            <p>Next steps for overrides: how to make them easier to use and manage.</p>
+            <a href="#">Learn more</a>
         </div>
 
         <div class="Middle_textbox3">
-            <p>Join the community of creators, developers, and founders who are shaping the future of Blender. Let’s create together and innovate beyond imagination.</p>
+            <h2>Free and Open Source</h2>
+            <p>Blender is a public project hosted on blender.org, licensed as GNU GPL, owned by its contributors.
+                For that reason Blender is Free and Open Source software, forever.
+                </p>
         </div>
     </div>
     <div class="Lower_Part">
