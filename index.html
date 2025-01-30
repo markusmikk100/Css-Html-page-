@@ -6,85 +6,200 @@
     <title>Body Example</title>
     <style>
         html {
-            scroll-behavior: smooth; /* Enable smooth scrolling for the whole page */
+            scroll-behavior: smooth;
         }
 
         body {
             color: black;
             font-family: "Inter", sans-serif;
-            height: 100%;  /* Ensure the body is the full height of the viewport */
             margin: 0;
-            overflow: auto;  /* Enable scroll if content exceeds screen height */
+            padding: 0;
+            overflow: auto;
         }
 
         .Top_Part {
-            background: rgb(0,143,255);
             background: linear-gradient(0deg, rgba(0,143,255,1) 0%, rgba(24,24,26,1) 100%);
-            height: 50vh;  /* 50% of the viewport height */
+            height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
         }
 
         .Top_Part h1 {
-            font-family: "Inter", sans-serif;
-            font-weight: 900; /* Condensed, bold */
-            font-size: 100px; /* Font size */
-            color: white;
-            letter-spacing: -2px; /* Condensed effect */
+            font-size: 80px;
+            font-weight: 900;
+            letter-spacing: -2px;
             text-transform: uppercase;
             margin: 0;
+            text-align: center;
         }
 
         .Middle_Part {
             width: 100%;
-            height: 50vh;  /* 50% of the viewport height */
-            background-image: url('pic.png'); /* Ensure path is correct */
+            height: 50vh;
+            background-image: url('home.png');
             background-repeat: no-repeat;
-            background-size: cover; /* Resize image to cover the container */
-            background-position: center; /* Center the image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .Middle_textbox1 {
+            position: absolute;
+            left: 10%;
+            width: 40%;
+            padding: 25px;
+            background-color: rgba(24, 24, 26, 0.75);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .Middle_textbox1 h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .Middle_textbox1 p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .Middle_textbox1 a {
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #633e3e00;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .Middle_textbox1 a:hover {
+            background-color: #000000;
+        }
+
+        /* Mirrored Middle Textbox */
+        .Middle_textbox2 {
+            position: absolute;
+            right: 10%;
+            width: 40%;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.75); /* White background for the mirrored box */
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .Middle_textbox2 h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .Middle_textbox2 p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .Middle_textbox2 a {
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #633e3e00;
+            color: black;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .Middle_textbox2 a:hover {
+            background-color: #000000;
+        }
+
+        /* New Textbox Below */
+        .Middle_textbox3 {
+            width: 70%;
+            padding: 30px;
+            background-color: rgba(24, 24, 26, 0.75);
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .Middle_textbox3 p {
+            line-height: 1.6;
         }
 
         .Lower_Part {
-            background: 
-                linear-gradient(45deg, rgba(1,71,104,1) 0%, rgba(81,82,60,1) 100%),  /* Gradient as the first layer */
-                url('Swim.png');  /* Image as the second layer */
-            height: 40vh;  /* 40% of the viewport height */
-            position: relative; /* Make this container relative to position the image and text */
+            background: linear-gradient(45deg, rgba(1,71,104,1) 0%, rgba(81,82,60,1) 100%), url('Swim.png');
+            height: 40vh;
+            position: relative;
             background-position-y: bottom;
         }
 
         .Lower_Img {
-            background: 
-                url('Swim.png');  /* Image as the second layer */
-            height: 100%;  /* 30% of the viewport height */
+            background: url('Swim.png');
+            height: 100%;
             background-size: 45vh;
             background-repeat: no-repeat;
             background-position: 65%;
         }
 
         .Lower_textbox {
-            position: absolute; /* Position it absolutely within Lower_Part */
-            left: 20%;  /* Position it 10% from the left */
-            top: 50%;  /* Center it vertically */
-            transform: translateY(-50%); /* Adjust vertical centering */
-            width: 25%;  /* Set the width of the textbox */
-            padding: 10px;
-            background-color: #18181A; /* Semi-transparent background */
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            padding: 25px;
+            background-color: rgba(24, 24, 26, 0.75);
             color: #F2F2F3;
             font-size: 18px;
             text-align: center;
             border-radius: 10px;
         }
 
+        .Lower_textbox h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .Lower_textbox p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .Lower_textbox button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #0C94FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .Lower_textbox button:hover {
+            background-color: #007BFF;
+        }
+
         .Extra {
             background-color: #18181A;
-            height: 15vh;  /* 15% of the viewport height */
+            height: 15vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white; /* Text color */
-            font-size: 20px; /* Adjust text size */
+            color: white;
+            font-size: 20px;
             text-align: center;
         }
 
@@ -98,11 +213,36 @@
     <div class="Top_Part">
         <h1>BLENDER 4.3</h1>
     </div>
-    <div class="Middle_Part"></div>
-    <div class="Lower_Part">
-        <div class="Lower_Img"></div> <!-- The image inside Lower_Part -->
-        <div class="Lower_textbox">Building is better together — we’re looking for founders to create alongside our team. If that’s you, we’d love to talk.</div> <!-- New text box added -->
+
+    <div class="Middle_Part">
+        <!-- First Textbox -->
+        <div class="Middle_textbox1">
+            <h2>This Summer’s Sculpt Mode Refactor</h2>
+            <p>Developers Hans Goudey and Sean Kim give a report on the optimizations to sculpt mode in Blender 4.3.</p>
+            <a href="#">Learn more</a>
+                <!-- New Textbox Below -->
+        </div>
+
+        <!-- Mirrored Textbox -->
+        <div class="Middle_textbox2">
+            <h2>Explore New Features</h2>
+            <p>Discover the latest updates and features introduced in Blender 4.3, empowering creators worldwide.</p>
+            <a href="#">Explore More</a>
+        </div>
+
+        <div class="Middle_textbox3">
+            <p>Join the community of creators, developers, and founders who are shaping the future of Blender. Let’s create together and innovate beyond imagination.</p>
+        </div>
     </div>
+    <div class="Lower_Part">
+        <div class="Lower_Img"></div>
+        <div class="Lower_textbox">
+            <h2>Create with Us</h2>
+            <p>Building is better together — we’re looking for founders to create alongside our team. If that’s you, we’d love to talk.</p>
+            <button>Become a Founder</button>
+        </div> 
+    </div>
+
     <div class="Extra">
         <p>© 2023 High Alpha. All rights reserved.</p>
     </div>
