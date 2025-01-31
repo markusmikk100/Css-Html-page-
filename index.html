@@ -17,22 +17,87 @@
             overflow: auto;
         }
 
+        /* Top Bar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(0, 0%, 0%);
+            color: white;
+        }
+
+        .topbar .pic img {
+            height: 100px; /* Adjust the size of the logo */
+            width: auto;
+        }
+
+        .topbar nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .topbar nav a:hover {
+            color: #0091ff;
+        }
+
         .Top_Part {
-            background: linear-gradient(0deg, rgba(0,143,255,1) 0%, rgba(24,24,26,1) 100%);
-            height: 50vh;
+            background: linear-gradient(0deg, #008fff 0%, #1C1C1C 100%);
+            height: 45vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
+            flex-direction: column;
+            text-align: center;
         }
 
         .Top_Part h1 {
-            font-size: 80px;
-            font-weight: 900;
-            letter-spacing: -2px;
+            font-size: 100px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: 1000;
+            letter-spacing: -3px;
             text-transform: uppercase;
-            margin: 0;
+        }
+
+        /* New Text Space with Button */
+        .Text_Space {
             text-align: center;
+            padding: 22px;
+            background-color: rgba(0, 0, 0, 0.63); /* Slightly transparent background */
+            margin-top: 2px;
+            border-radius: 8px;
+        }
+
+        .Text_Space h2 {
+            font-size: 36px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 15px;
+        }
+
+        .Text_Space p {
+            font-size: 18px;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .Start_Button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #0C94FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .Start_Button:hover {
+            background-color: #007BFF;
         }
 
         .Middle_Part {
@@ -47,8 +112,9 @@
 
         .Middle_textbox1 {
             position: absolute;
-            left: 10%;
-            width: 40%;
+            left: 8%;
+            width: 35%;
+            height: 25%;
             padding: 25px;
             background-color: rgb(24, 24, 26);
             color: white;
@@ -60,6 +126,7 @@
         .Middle_textbox1 h2 {
             font-size: 32px;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .Middle_textbox1 p {
@@ -78,7 +145,6 @@
             display: inline-block;
             transition: background-color 0.3s;
             font-weight: bolder;
-
         }
 
         .Middle_textbox1 a:hover {
@@ -88,10 +154,11 @@
         /* Mirrored Middle Textbox */
         .Middle_textbox2 {
             position: absolute;
-            right: 10%;
-            width: 40%;
+            right: 8%;
+            width: 35%;
+            height: 25%;
             padding: 25px;
-            background-color: rgb(255, 255, 255); /* White background for the mirrored box */
+            background-color: rgb(255, 255, 255);
             color: black;
             font-size: 20px;
             text-align: center;
@@ -101,22 +168,22 @@
         .Middle_textbox2 h2 {
             font-size: 32px;
             margin-bottom: 15px;
-            text-align: left;
+            text-align: center;
         }
 
         .Middle_textbox2 p {
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 20px;
-            text-align: left;
+            text-align: center;
         }
 
         .Middle_textbox2 a {
             text-decoration: none;
-            padding: 5px 24px;
+            padding: 12px 24px;
             background-color: #633e3e00;
-            color: black;
-            font-size: 20px;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
             border-radius: 5px;
             display: inline-block;
             transition: background-color 0.3s;
@@ -124,22 +191,21 @@
         }
 
         .Middle_textbox2 a:hover {
-            background-color: #000000;
+            background-color: #ebebeb;
         }
 
-.Middle_textbox3 {
-    position: absolute;
-    right: 0%;
-    width: 90%;
-    padding: 25px;
-    top: calc(30% + 10px); /* Adjusting position with a calculated offset from the middle */
-    background-color: rgba(0, 0, 0, 0); /* White background for the mirrored box */
-    color: rgb(255, 255, 255);
-    font-size: 35px;
-    text-align: center;
-    border-radius: 10px;
-}
-
+        .Middle_textbox3 {
+            position: absolute;
+            right: 0%;
+            width: 90%;
+            padding: 25px;
+            top: calc(30% + 10px);
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-size: 35px;
+            text-align: center;
+            border-radius: 10px;
+        }
 
         .Middle_textbox3 h2 {
             font-size: 51px;
@@ -228,45 +294,66 @@
 </head>
 <body>
 
-    <div class="Top_Part">
-        <h1>BLENDER 4.3</h1>
+ <!-- Top Bar -->
+<div class="topbar">
+    <div class="pic">
+        <img src="logo.png" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+        <a href="#">Features</a>
+        <a href="#">Support</a>
+        <a href="#">Get Involved</a>
+        <a href="#">About</a>
+        <a href="#">Jobs</a>
+    </nav>
+</div>
+
+<div class="Top_Part">
+    <h1>BLENDER 4.3</h1>
+
+    <!-- New Text Space with Button -->
+    <div class="Text_Space">
+        <h2>Get Started with Blender 4.3</h2>
+        <p>Discover the latest updates and features in Blender 4.3. Whether you're an artist or developer, Blender 4.3 has something for you!</p>
+        <button class="Start_Button">Get Started</button>
+    </div>
+</div>
+
+<div class="Middle_Part">
+    <!-- First Textbox -->
+    <div class="Middle_textbox1">
+        <h2>This Summer’s Sculpt Mode Refactor</h2>
+        <p>Developers Hans Goudey and Sean Kim give a report on the optimizations to sculpt mode in Blender 4.3.</p>
+        <a href="#">Learn more</a>
     </div>
 
-    <div class="Middle_Part">
-        <!-- First Textbox -->
-        <div class="Middle_textbox1">
-            <h2>This Summer’s Sculpt Mode Refactor</h2>
-            <p>Developers Hans Goudey and Sean Kim give a report on the optimizations to sculpt mode in Blender 4.3.</p>
-            <a href="#">Learn more</a>
-                <!-- New Textbox Below -->
-        </div>
-
-        <!-- Mirrored Textbox -->
-        <div class="Middle_textbox2">
-            <h2>The Future of Overrides</h2>
-            <p>Next steps for overrides: how to make them easier to use and manage.</p>
-            <a href="#">Learn more</a>
-        </div>
-
-        <div class="Middle_textbox3">
-            <h2>Free and Open Source</h2>
-            <p>Blender is a public project hosted on blender.org, licensed as GNU GPL, owned by its contributors.
-                For that reason Blender is Free and Open Source software, forever.
-                </p>
-        </div>
-    </div>
-    <div class="Lower_Part">
-        <div class="Lower_Img"></div>
-        <div class="Lower_textbox">
-            <h2>Create with Us</h2>
-            <p>Building is better together — we’re looking for founders to create alongside our team. If that’s you, we’d love to talk.</p>
-            <button>Become a Founder</button>
-        </div> 
+    <!-- Mirrored Textbox -->
+    <div class="Middle_textbox2">
+        <h2>The Future of Overrides</h2>
+        <p>Next steps for overrides: how to make them easier to use and manage.</p>
+        <a href="#">Learn more</a>
     </div>
 
-    <div class="Extra">
-        <p>© 2023 High Alpha. All rights reserved.</p>
+    <div class="Middle_textbox3">
+        <h2>Free and Open Source</h2>
+        <p>Blender is a public project hosted on blender.org, licensed as GNU GPL, owned by its contributors.
+            For that reason Blender is Free and Open Source software, forever.
+        </p>
     </div>
+</div>
+
+<div class="Lower_Part">
+    <div class="Lower_Img"></div>
+    <div class="Lower_textbox">
+        <h2>Create with Us</h2>
+        <p>Building is better together — we’re looking for founders to create alongside our team. If that’s you, we’d love to talk.</p>
+        <button>Become a Founder</button>
+    </div> 
+</div>
+
+<div class="Extra">
+    <p>© 2023 High Alpha. All rights reserved.</p>
+</div>
 
 </body>
 </html>
