@@ -1,327 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			html {
+				scroll-behavior: smooth;
+				margin: 0;
+				padding: 0;
+			}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Example</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-            margin: 0;
-            padding: 0;
-        }
+			body {
+				color: black;
+				font-family: "Inter", sans-serif;
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+				background-color: #1c1c1c;
+			}
 
-        body {
-            color: black;
-            font-family: "Inter", sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+			.top-bar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #1c1c1c;
+				color: white;
+				padding: 15px 5%;
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
 
-        /* Top Bar */
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1C1C1C;
-            color: white;
-            padding: 15px;
-        }
+			.top-bar__pic img {
+				height: 60px;
+				width: auto;
+				transition: transform 0.3s ease;
+			}
 
-        .top-bar__pic img {
-            height: 60px;
-            width: auto;
-        }
+			.top-bar__pic img:hover {
+				transform: scale(1.1);
+			}
 
-        .top-bar__nav a {
-            text-decoration: none;
-            color: white;
-            margin: 0 15px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+			.top-bar__nav a {
+				text-decoration: none;
+				color: white;
+				margin: 0 15px;
+				font-size: 16px;
+				font-weight: 500;
+				transition: color 0.3s ease;
+			}
 
-        .top-bar__nav a:hover {
-            color: #0091ff;
-        }
+			.top-bar__nav a:hover {
+				color: #0091ff;
+			}
 
-        /* Top Section */
-        .top-section {
-            background: linear-gradient(0deg, #008FFF 0%, #1C1C1C 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
+			.top-section {
+				background: linear-gradient(135deg, #008fff 0%, #1c1c1c 100%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				text-align: center;
+				padding: 150px 5%;
+				clip-path: polygon(0 0, 100% 0, 100% 90%, 0 91%);
+			}
 
-        .top-section__title {
-            font-size: 80px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 1000;
-            letter-spacing: -3px;
-            text-transform: uppercase;
-            margin: 0;
-        }
+			.top-section__title {
+				font-size: 80px;
+				font-family: "Arial", sans-serif;
+				font-weight: 900;
+				letter-spacing: -3px;
+				text-transform: uppercase;
+				margin: 0;
+				animation: fadeIn 1.5s ease-in-out;
+			}
 
-        /* Text Space with Button */
-        .text-space {
-            text-align: center;
-            padding: 22px;
-            background-color: rgba(0, 0, 0, 0.63);
-            margin-top: 15px;
-            border-radius: 8px;
-        }
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
 
-        .text-space__heading {
-            font-size: 36px;
-            color: white;
-            margin-bottom: 15px;
-        }
+			.text-space {
+				text-align: center;
+				padding: 30px;
+				background-color: rgba(0, 0, 0, 0.7);
+				border-radius: 15px;
+				backdrop-filter: blur(10px);
+				animation: slideUp 1.5s ease-in-out;
+			}
 
-        .text-space__description {
-            font-size: 18px;
-            color: white;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+			@keyframes slideUp {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
 
-        .start-button {
-            padding: 12px 24px;
-            font-size: 18px;
-            background-color: #0C94FF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+			.text-space__heading {
+				font-size: 36px;
+				color: white;
+				margin-bottom: 20px;
+			}
 
-        .start-button:hover {
-            animation: rainbow 1s infinite linear;
-        }
+			.text-space__description {
+				font-size: 18px;
+				color: white;
+				line-height: 1.6;
+				margin-bottom: 30px;
+			}
 
-        @keyframes rainbow {
-            0% { background-color: #ff002b; }
-            15% { background-color: #FF7F00; }
-            30% { background-color: #FFFF00; }
-            45% { background-color: #00FF00; }
-            60% { background-color: #0000FF; }
-            75% { background-color: #4B0082; }
-            100% { background-color: #ff0000; }
-        }
+			.start-button {
+				padding: 15px 30px;
+				font-size: 18px;
+				background-color: #0c94ff;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+			}
 
-        /* Middle Section */
-        .middle-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 50px 5%;
-            background-image: url('home.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
+			.start-button:hover {
+				background-color: #006fe6;
+				transform: translateY(-5px);
+			}
 
-        .middle-section__textbox {
-            width: 48%;
-            padding: 25px;
-            background-color: rgba(0, 0, 0, 0.781);
-            color: white;
-            font-size: 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
+			.middle-section {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				padding: 80px 5%;
+				background-image: url("home.png");
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				flex-wrap: wrap;
+				margin-bottom: 50px;
+				clip-path: polygon(0 7%, 100% 0, 100% 90%, 0 100%);
+			}
 
-        .middle-section__textbox--left {
-            background-color: rgba(0, 0, 0, 0.781);
-        }
+			.middle-section__textbox {
+				width: 48%;
+				padding: 30px;
+				background-color: rgba(0, 0, 0, 0.7);
+				color: white;
+				font-size: 20px;
+				text-align: center;
+				border-radius: 15px;
+				margin-bottom: 30px;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
 
-        .middle-section__textbox--right {
-            background-color: rgba(255, 255, 255, 0.781);
-            color: black;
-        }
+			.middle-section__textbox:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+			}
 
-        .middle-section__textbox h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+			.middle-section__textbox--right {
+				background-color: rgba(255, 255, 255, 0.7);
+				color: black;
+			}
 
-        .middle-section__textbox p {
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+			.middle-section__textbox h2 {
+				font-size: 32px;
+				margin-bottom: 20px;
+			}
 
-        .middle-section__textbox a {
-            text-decoration: none;
-            padding: 12px 24px;
-            background-color: #633e3e00;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: background-color 0.3s;
-            font-weight: bolder;
-        }
+			.middle-section__textbox p {
+				font-size: 18px;
+				line-height: 1.6;
+				margin-bottom: 20px;
+			}
 
-        .middle-section__textbox a:hover {
-            background-color: #000000;
-        }
+			.middle-section__textbox a {
+				text-decoration: none;
+				padding: 12px 24px;
+				background-color: #0091ff;
+				color: rgb(255, 255, 255);
+				font-size: 16px;
+				border-radius: 8px;
+				display: inline-block;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+			}
 
-        .middle-section__textbox--center {
-            width: 100%;
-            padding: 25px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 35px;
-            text-align: center;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
+			.middle-section__textbox a:hover {
+				background-color: #007bff;
+				transform: translateY(-5px);
+			}
 
-        /* Lower Section */
-        .lower-section {
-            background: linear-gradient(45deg, rgba(1, 71, 104, 1) 0%, rgba(81, 82, 60, 1) 100%), url('Swim.png');
-            background-position-y: bottom;
-            padding: 100px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+			.middle-section__textbox--center {
+				width: 50%;
+				padding: 40px;
+				background-color: rgba(0, 0, 0, 0.7);
+				color: white;
+				font-size: 35px;
+				text-align: center;
+				border-radius: 15px;
+				margin-top: 30px;
+			}
 
-        .lower-section__textbox {
-            padding: 25px;
-            background-color: rgba(24, 24, 26, 0.75);
-            color: #F2F2F3;
-            font-size: 18px;
-            text-align: center;
-            border-radius: 10px;
-            width: 35%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+			.lower-section {
+				background: linear-gradient(135deg, #014768 0%, #51523c 100%),
+					url("Swim.png");
+				background-position-y: bottom;
+				padding: 150px 5%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+			}
 
-        .lower-section__textbox h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
+			.lower-section__textbox {
+				padding: 40px;
+				background-color: rgba(24, 24, 26, 0.8);
+				color: #f2f2f3;
+				font-size: 18px;
+				text-align: center;
+				border-radius: 15px;
+				width: 40%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
 
-        .lower-section__textbox p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+			.lower-section__textbox:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+			}
 
-        .lower-section__textbox button {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #0C94FF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+			.lower-section__textbox h2 {
+				font-size: 35px;
+				margin-bottom: 20px;
+			}
 
-        .lower-section__textbox button:hover {
-            background-color: #007BFF;
-        }
+			.lower-section__textbox p {
+				font-size: 18px;
+				margin-bottom: 30px;
+				line-height: 1.6;
+			}
 
-        /* Extra Section */
-        .extra-section {
-            background-color: #18181A;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 20px;
-            text-align: center;
-        }
+			.lower-section__textbox button {
+				padding: 15px 30px;
+				font-size: 16px;
+				background-color: #0c94ff;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+			}
 
-        /* Centered Create with Us */
-        .create-with-us {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100%;
-            width: 80%;
-        }
-    </style>
-</head>
+			.lower-section__textbox button:hover {
+				background-color: #007bff;
+				transform: translateY(-5px);
+			}
 
-<body>
+			.extra-section {
+				background-color: #18181a;
+				padding: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				font-size: 16px;
+				text-align: center;
+			}
+		</style>
+	</head>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="top-bar__pic">
-            <img src="logo.png" alt="Logo">
-        </div>
-        <nav class="top-bar__nav">
-            <a href="#">Features</a>
-            <a href="#">Support</a>
-            <a href="#">Get Involved</a>
-            <a href="#">About</a>
-            <a href="#">Jobs</a>
-        </nav>
-    </div>
+	<body>
+		<!-- Top Bar -->
+		<div class="top-bar">
+			<div class="top-bar__pic">
+				<img src="logo.png" alt="Logo" />
+			</div>
+			<nav class="top-bar__nav">
+				<a href="#">Features</a>
+				<a href="#">Support</a>
+				<a href="#">Get Involved</a>
+				<a href="#">About</a>
+				<a href="#">Jobs</a>
+			</nav>
+		</div>
 
-    <div class="top-section">
-        <h1 class="top-section__title">BLENDER 4.3</h1>
+		<!-- Top Section -->
+		<div class="top-section">
+			<div class="text-space">
+				<h2 class="text-space__heading">Get Started with Blender 4.3</h2>
+				<p class="text-space__description">
+					Discover the latest updates and features in Blender 4.3. Whether
+					you're an artist or developer, Blender 4.3 has something for you!
+				</p>
+				<button class="start-button">Get Started</button>
+			</div>
+		</div>
 
-        <div class="text-space">
-            <h2 class="text-space__heading">Get Started with Blender 4.3</h2>
-            <p class="text-space__description">Discover the latest updates and features in Blender 4.3. Whether you're an artist or developer, Blender 4.3 has something for you!</p>
-            <button class="start-button">Get Started</button>
-        </div>
-    </div>
+		<!-- Middle Section -->
+		<div class="middle-section">
+			<div class="middle-section__textbox middle-section__textbox--left">
+				<h2>This Summer’s Sculpt Mode Refactor</h2>
+				<p>
+					Developers Hans Goudey and Sean Kim give a report on the optimizations
+					to sculpt mode in Blender 4.3.
+				</p>
+				<a href="#">Learn more</a>
+			</div>
 
-    <div class="middle-section">
-        <div class="middle-section__textbox middle-section__textbox--left">
-            <h2>This Summer’s Sculpt Mode Refactor</h2>
-            <p>Developers Hans Goudey and Sean Kim give a report on the optimizations to sculpt mode in Blender 4.3.</p>
-            <a href="#">Learn more</a>
-        </div>
+			<div class="middle-section__textbox middle-section__textbox--right">
+				<h2>The Future of Overrides</h2>
+				<p>
+					Next steps for overrides: how to make them easier to use and manage.
+				</p>
+				<a href="#">Learn more</a>
+			</div>
 
-        <div class="middle-section__textbox middle-section__textbox--right">
-            <h2>The Future of Overrides</h2>
-            <p>Next steps for overrides: how to make them easier to use and manage.</p>
-            <a href="#">Learn more</a>
-        </div>
+			<div class="middle-section__textbox middle-section__textbox--center">
+				<h2>Free and Open Source</h2>
+				<p>
+					Blender is a public project hosted on blender.org, licensed as GNU
+					GPL, owned by its contributors. For that reason Blender is Free and
+					Open Source software, forever.
+				</p>
+			</div>
+		</div>
 
-        <div class="middle-section__textbox middle-section__textbox--center">
-            <h2>Free and Open Source</h2>
-            <p>Blender is a public project hosted on blender.org, licensed as GNU GPL, owned by its contributors. For that reason Blender is Free and Open Source software, forever.</p>
-        </div>
-    </div>
+		<!-- Lower Section -->
+		<div class="lower-section">
+			<div class="lower-section__textbox">
+				<h2>Create with Us</h2>
+				<p>
+					Building is better together — we’re looking for founders to create
+					alongside our team. If that’s you, we’d love to talk.
+				</p>
+				<button>Become a Founder</button>
+			</div>
+		</div>
 
-    <!-- Lower Section with Centered "Create with Us" -->
-    <div class="lower-section">
-        <div class="create-with-us">
-            <div class="lower-section__textbox">
-                <h2>Create with Us</h2>
-                <p>Building is better together — we’re looking for founders to create alongside our team. If that’s you, we’d love to talk.</p>
-                <button>Become a Founder</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="extra-section">
-        <p>© 2023 High Alpha. All rights reserved.</p>
-    </div>
-
-</body>
-
+		<!-- Extra Section -->
+		<div class="extra-section">
+			<p>© 2023 High Alpha. All rights reserved.</p>
+		</div>
+	</body>
 </html>
